@@ -1,0 +1,28 @@
+package com.rolandoroz.h2springboot.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.rolandoroz.h2springboot.model.NewsPost;
+import com.rolandoroz.h2springboot.service.NewsPostService;
+
+@RestController
+public class NewsPostController {
+	
+	@Autowired
+	private NewsPostService newsPostService;
+	
+	@GetMapping("/newsposts")
+	public ResponseEntity<List<NewsPost>> getAllNewsPost() {
+		return ResponseEntity.ok().body(newsPostService.getAllNewsPost());
+	}
+	
+	public ResponseEntity<NewsPost>() {
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.rolandoroz.h2springboot.controller;
+
+public class NewsPostController {
+
+}
