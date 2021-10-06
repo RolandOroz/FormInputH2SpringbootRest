@@ -11,8 +11,8 @@ public interface NewsPostService {
 
 	List<NewsPost> getAllNewsPost();
 
-	NewsPost getNewsPostById(long newspostId);
+	NewsPost getNewsPostById(long id);
 
-	void deleteNewsPost(long id);
+	void deleteNewsPost(long id);	
 
 }

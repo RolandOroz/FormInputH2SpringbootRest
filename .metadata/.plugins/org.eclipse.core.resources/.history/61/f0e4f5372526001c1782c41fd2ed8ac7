@@ -1,0 +1,64 @@
+package com.rolandoroz.h2springboot.model;
+
+public class RestResponse<T> {
+	
+	private String status;
+	private int httpcode;
+	private String devMessage;
+	private String userMessage;
+	
+	private T data;
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public int getHttpcode() {
+		return httpcode;
+	}
+
+	public void setHttpcode(int httpcode) {
+		this.httpcode = httpcode;
+	}
+
+	public String getDevMessage() {
+		return devMessage;
+	}
+
+	public void setDevMessage(String devMessage) {
+		this.devMessage = devMessage;
+	}
+
+	public String getUserMessage() {
+		return userMessage;
+	}
+
+	public void setUserMessage(String userMessage) {
+		this.userMessage = userMessage;
+	}
+
+	public T getData() {
+		return data;
+	}
+
+	public void setData(T data) {
+		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "RestResponse [status=" + status + ", httpcode=" + httpcode + ", devMessage=" + devMessage
+				+ ", userMessage=" + userMessage + ", data=" + data + "]";
+	}
+
+	
+		
+}	
+
+
+
+

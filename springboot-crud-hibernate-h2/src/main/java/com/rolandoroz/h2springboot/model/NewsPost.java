@@ -9,73 +9,106 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="newspost")
+@Table(name = "newspost")
 public class NewsPost {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+	// @Column(name = "id")
 	private long id;
-	
+
 	@Column(name = "newstitle")
 	private String newstitle;
-	
+
 	@DateTimeFormat
 	@Column(name = "cdate")
 	private Date cdate;
-	
+
 	@Column(name = "fpost")
 	private String fpost;
-	
-	@CreationTimestamp
-	@Column(name = "created")
-	private Date createdAt;
-	
-	@CreationTimestamp
-	@Column(name = "updated")
-	private Date updatedAt;
-	
-	
+
+		
+	@Column(name = "published")
+	private boolean published;
+
+
+
+	// Constructor
+	public NewsPost(String newstitle, Date cdate, String fpost, boolean published) {
+		// super();		
+		this.newstitle = newstitle;
+		this.cdate = cdate;
+		this.fpost = fpost;		
+		this.published = published;
+	}
+
+
+
+	/*public NewsPost(String newstitle, String fpost, boolean b) {
+		// TODO Auto-generated constructor stub
+	}*/
+
 	public long getId() {
 		return id;
 	}
+
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	public String getNewstitle() {
 		return newstitle;
 	}
+
 	public void setNewstitle(String newstitle) {
 		this.newstitle = newstitle;
 	}
+
 	public Date getCdate() {
 		return cdate;
 	}
+
 	public void setCdate(Date cdate) {
 		this.cdate = cdate;
 	}
+
 	public String getFpost() {
 		return fpost;
 	}
+
 	public void setFpost(String fpost) {
 		this.fpost = fpost;
 	}
-	public Date getCreatedAt() {
-		return createdAt;
+
+		
+	public boolean isPublished() {
+		return published;
 	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+
+	public void setPublished(boolean isPublished) {
+		this.published = isPublished;
 	}
-	public Date getUpdatedAt() {
-		return updatedAt;
+
+	//Generate to String
+	@Override
+	public String toString() {
+		return "[" +
+				"success: true," +
+				"data: {" +
+				"id:" + id +
+				", newstitle:" + newstitle +
+				", cdate:" + cdate +
+				", fpost:" + fpost +
+				", published:" + published	+
+				"}" + "]";
 	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+
+	
+	
+
 	
 	
 }

@@ -1,5 +1,0 @@
-package com.rolandoroz.h2springboot.service;
-
-public interface NewsPostService {
-
-}

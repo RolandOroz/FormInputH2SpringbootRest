@@ -1,5 +1,0 @@
-package com.rolandoroz.h2springboot.repository;
-
-public interface NewsPostRepository {
-
-}

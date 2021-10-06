@@ -1,0 +1,5 @@
+package com.rolandoroz.h2springboot.exception;
+
+public class ControllerExceptionHandler {
+
+}

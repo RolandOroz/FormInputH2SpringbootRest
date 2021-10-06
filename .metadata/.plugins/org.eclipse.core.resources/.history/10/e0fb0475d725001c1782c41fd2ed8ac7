@@ -1,0 +1,29 @@
+package com.rolandoroz.h2springboot.controller;
+
+import org.springframework.core.MethodParameter;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.client.RestClientResponseException;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
+
+@ControllerAdvice
+public class ExtJsResponseAdvice implements ResponseBodyAdvice<Object>{
+	
+	public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
+		return true;
+	}
+	
+	@Override
+	public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType),
+			Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest,
+		ServerHttpResponse) {
+		final RestClientResponseException<Object> output = new RestClientResponseException <>(null, 0, null, null, null, null);
+		output.setData(body);
+		output.setDevMessage("ResponseAdviceDevMessage");
+		output.setHttpcode(200);
+		output.setStatus("Success");
+		output.setUserMessage("ResponseAdviceUserMessage");
+		return output;
+	}
+}

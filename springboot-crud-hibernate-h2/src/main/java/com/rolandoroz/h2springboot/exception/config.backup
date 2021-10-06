@@ -1,0 +1,12 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = true
+	symlinks = false
+	ignorecase = true
+	sharedrepository = 2
+[receive]
+	denyNonFastforwards = true
+[remote "GitHub"]
+	url = https://github.com/RolandOroz/
+	fetch = +refs/heads/*:refs/remotes/GitHub/*
